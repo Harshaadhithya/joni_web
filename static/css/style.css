@@ -1073,3 +1073,13 @@ box-shadow: 1px 1px 11px 1px rgba(0,0,0,0.26);
 }
 
 
+.desktop-admin-menu{
+    display: none;
+}
+
+.mobile-admin-menu{
+    display: none;
+}
+
+
+

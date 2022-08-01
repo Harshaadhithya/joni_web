@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style_references %} 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css"/>
+{% endblock style_references %}
+
+{% block content %}
+<section class="table_wrapper" >
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+       
+    
+        <!-- DataTales Example -->
+        <div class="container" style="padding-bottom: 15px">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title mb-4">
+                                <div class="d-flex justify-content-start">
+                                    <div class="ml-auto">
+                                        <input type="button" class="btn btn-primary d-none" id="btnDiscard"
+                                               value="Discard Changes"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="margin-bottom: 20px">
+                                    <h4>Users</h4>
+                                    <div class="table-responsive panel-horizontal" style="font-size:12px; padding-top: 7px">
+                                        <table class="table table-bordered" id="intake_2">
+                                            <thead>
+                                            <tr>
+                                                    <th>Profile Image</th>
+                                                    <th>Name</th>
+                                                    <th>Username</th>
+                                                    <th>Email</th>
+                                                    <th>Is Admin?</th>
+                                                    <th>Action</th>
+                                                    <th>Delete Profile</th>
+                                                   
+                                                    
+                                                    
+                                                
+                                            </tr>
+                                            </thead>
+                                           
+                                            {% for profile in profiles %}
+                                            <tr>
+                                                <td><img src="{{profile.profile_image.url}}" style="height:60px; width:auto; border-radius:50%; object-fit:cover;" alt=""></td>
+                                                <td>{{profile.name}}</td>
+                                                <td>{{profile.username}}</td>
+                                                <td>{{profile.email}}</td>
+                                                
+                                                
+                                                {% if profile.role == 'admin' %}
+                                                    <td><i class="fas fa-check-circle" style="color:green;"></i></td>
+                                                {% else %}
+                                                    <td><i class="fas fa-times-circle" style="color:#dc3545;"></i></td>
+                                                {% endif %}
+                                                {% if profile.role == 'admin' %}
+                                                <td><a href="{% url 'remove_admin_rights' profile.id %}" style="color: #2B87B9 !important; font-weight:bold;">Not an admin</a></td>
+                                                {% else %}
+                                                <td><a href="{% url 'give_admin_rights' profile.id %}" style="color: #2B87B9 !important; font-weight:bold;">Give Admin Rights</a></td>
+                                                {% endif %}
+                                                
+                                                <td><a href="{% url 'delete_user_profile' profile.id %}"><i class="fas fa-trash" style="color: #dc3545;"></i></a></td>
+                                                
+
+                                                
+                                                
+                                            </tr>
+                                            
+                                            {% endfor %}
+                                            
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</section>
+<!-- Scrollable modal -->
+
+  
+  
+
+{% endblock %}
+{% block script_references %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src=" https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#intake_2').DataTable({
+                
+            });
+            $('#myInput').on('keyup', function () {
+                table.search(this.value).draw();
+            });
+        });
+    </script>
+    <script>
+        let modal_body=document.getElementById("modal_body")
+        let modalHandler=(e)=>{
+            
+            
+        }
+    </script>
+{% endblock script_references %}

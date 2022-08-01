@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.core.mail import send_mail
 from threading import Thread
+from django.contrib.auth.decorators import login_required
 
 from django.urls import is_valid_path
 from .forms import *
@@ -72,117 +73,167 @@ def contact_us(request):
 def separate_service(request,service_name):
     return render(request,f'info/{service_name}.html')
 
+@login_required(login_url='signin')
 def enquiry_list(request):
-    enquiry_list=Enquiry.objects.all().order_by('-created')
-    context={'enquiry_list':enquiry_list}
-    return render(request,'info/enquiry_list.html',context)
+    if request.user.profile.role=='admin':
+        enquiry_list=Enquiry.objects.all().order_by('-created')
+        context={'enquiry_list':enquiry_list}
+        return render(request,'info/enquiry_list.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')
 
+@login_required(login_url='signin')
 def mark_as_read(request,pk):
-    enquiry_obj=Enquiry.objects.get(id=pk)
-    enquiry_obj.is_read=True
-    enquiry_obj.save()
-    return redirect('enquiry_list')
+    if request.user.profile.role=='admin':
+        enquiry_obj=Enquiry.objects.get(id=pk)
+        enquiry_obj.is_read=True
+        enquiry_obj.save()
+        return redirect('enquiry_list')
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
+
+@login_required(login_url='signin')
 def manage_service(request):
+    if request.user.profile.role=='admin':
+        services=Service.objects.all()
+        context={'services':services}
+        return render(request,'info/manage_service.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
-    services=Service.objects.all()
-    context={'services':services}
-    return render(request,'info/manage_service.html',context)
-
+@login_required(login_url='signin')
 def add_service(request):
-    form=ServiceForm()
-    if request.method=='POST':
-        form=ServiceForm(request.POST,request.FILES)
-        for field in form:
-            print(field.errors,field.name)
-        # if form.is_valid():
-        
-        if form.is_valid():
-            print("form is valid")
-            service=form.save(commit=False)
-            service.short_title=service.short_title.lower()
-            service.save()
-            messages.success(request,"Service Added Successfully!")
+    if request.user.profile.role=='admin':
+        form=ServiceForm()
+        if request.method=='POST':
+            form=ServiceForm(request.POST,request.FILES)
+            for field in form:
+                print(field.errors,field.name)
+            # if form.is_valid():
+            
+            if form.is_valid():
+                print("form is valid")
+                service=form.save(commit=False)
+                service.short_title=service.short_title.lower()
+                service.save()
+                messages.success(request,"Service Added Successfully!")
 
-        else:
-            messages.error(request,"Something Went Wrong!")
-        return redirect('manage_service')
-    context={'form':form,'page':'service'}
-    return render(request,'info/form.html',context)
+            else:
+                messages.error(request,"Something Went Wrong!")
+            return redirect('manage_service')
+        context={'form':form,'page':'service'}
+        return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
+@login_required(login_url='signin')
 def edit_service(request,pk):
-    service_obj=Service.objects.get(id=pk)
-    form=ServiceForm(instance=service_obj)
-    if request.method=='POST':
-        form=ServiceForm(request.POST,request.FILES,instance=service_obj)
-        for field in form:
-            print(field.errors,field.name)        
-        if form.is_valid():
-            print("form is valid")
-            form.save()
-            messages.success(request,"Service Updated Successfully!")
+    if request.user.profile.role=='admin':
+        service_obj=Service.objects.get(id=pk)
+        form=ServiceForm(instance=service_obj)
+        if request.method=='POST':
+            form=ServiceForm(request.POST,request.FILES,instance=service_obj)
+            for field in form:
+                print(field.errors,field.name)        
+            if form.is_valid():
+                print("form is valid")
+                form.save()
+                messages.success(request,"Service Updated Successfully!")
 
-        else:
+            else:
+                messages.error(request,"Something Went Wrong!")
+            return redirect('manage_service')
+        context={'form':form,'page':'service'}
+        return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
+
+@login_required(login_url='signin')
+def delete_service(request,pk):
+    if request.user.profile.role=='admin':
+        service_obj=Service.objects.get(id=pk)
+        try:
+            service_obj.delete()
+            messages.success(request,"Service Added Successfully!")
+        except:
             messages.error(request,"Something Went Wrong!")
         return redirect('manage_service')
-    context={'form':form,'page':'service'}
-    return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
-def delete_service(request,pk):
-    service_obj=Service.objects.get(id=pk)
-    try:
-        service_obj.delete()
-        messages.success(request,"Service Added Successfully!")
-    except:
-        messages.error(request,"Something Went Wrong!")
-    return redirect('manage_service')
-
+@login_required(login_url='signin')
 def manage_testimonials(request):
-    testimonials=Testimonial.objects.all()
-    context={'testimonials':testimonials}
-    return render(request,'info/manage_testimonials.html',context)
+    if request.user.profile.role=='admin':
+        testimonials=Testimonial.objects.all()
+        context={'testimonials':testimonials}
+        return render(request,'info/manage_testimonials.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
+@login_required(login_url='signin')
 def add_testimonial(request):
-    form=TestimonialForm()
-    if request.method=='POST':
-        form=TestimonialForm(request.POST,request.FILES)
-        for field in form:
-            print(field.label,field.errors)
-        if form.is_valid():
-            form.save()
-            messages.success(request,"Testimonial Added Successfully!")
-            return redirect('manage_testimonials')
-        else:
-            messages.error(request,"Something Went Wrong!")
-    context={'form':form,'page':'testimonial'}
-    return render(request,'info/form.html',context)
+    if request.user.profile.role=='admin':
+        form=TestimonialForm()
+        if request.method=='POST':
+            form=TestimonialForm(request.POST,request.FILES)
+            for field in form:
+                print(field.label,field.errors)
+            if form.is_valid():
+                form.save()
+                messages.success(request,"Testimonial Added Successfully!")
+                return redirect('manage_testimonials')
+            else:
+                messages.error(request,"Something Went Wrong!")
+        context={'form':form,'page':'testimonial'}
+        return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
+@login_required(login_url='signin')
 def edit_testimonial(request,pk):
-    testimonial_obj=Testimonial.objects.get(id=pk)
-    form=TestimonialForm(instance=testimonial_obj)
-    if request.method=='POST':
-        form=TestimonialForm(request.POST,request.FILES,instance=testimonial_obj)
-        for field in form:
-            print(field.errors,field.name)        
-        if form.is_valid():
-            print("form is valid")
-            form.save()
-            messages.success(request,"Testimonial Updated Successfully!")
-        else:
-            print("form is not valid")
-            messages.error(request,"Something Went Wrong!")
-        return redirect('manage_testimonials')
-    context={'form':form,'page':'testimonial'}
-    return render(request,'info/form.html',context)
+    if request.user.profile.role=='admin':
+        testimonial_obj=Testimonial.objects.get(id=pk)
+        form=TestimonialForm(instance=testimonial_obj)
+        if request.method=='POST':
+            form=TestimonialForm(request.POST,request.FILES,instance=testimonial_obj)
+            for field in form:
+                print(field.errors,field.name)        
+            if form.is_valid():
+                print("form is valid")
+                form.save()
+                messages.success(request,"Testimonial Updated Successfully!")
+            else:
+                print("form is not valid")
+                messages.error(request,"Something Went Wrong!")
+            return redirect('manage_testimonials')
+        context={'form':form,'page':'testimonial'}
+        return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
+@login_required(login_url='signin')
 def delete_testimonial(request,pk):
-    testimonial_obj=Testimonial.objects.get(id=pk)
-    try:
-        testimonial_obj.delete()
-        messages.success(request,"Testimonial Deleted Successfully")
-    except:
-        messages.error(request,"Something Went Wrong")
+    if request.user.profile.role=='admin':
+        testimonial_obj=Testimonial.objects.get(id=pk)
+        try:
+            testimonial_obj.delete()
+            messages.success(request,"Testimonial Deleted Successfully")
+        except:
+            messages.error(request,"Something Went Wrong")
 
-    return redirect('manage_testimonials')
+        return redirect('manage_testimonials')
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
 
 

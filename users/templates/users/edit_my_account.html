@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="contact_container">
+    <div class="container px-5 myform-container">
+        
+        <div class="row  contact_wrapper">
+            
+            <div class="contact-box-right p-5 my-auto">
+                <h2 class="text-center">Update Profile</h2>
+                <form action="" method="POST" onsubmit="submithandler(event)" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-4 pt-2">
+                            <label for="exampleFormControlInput1" class="form-label">{{field.label}} <span>{{field.errors}}</span></label>
+                            {{field}}
+                        </div>
+                    {% endfor %}
+                      
+                    <button type="submit" class="contact-btn mt-4">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
