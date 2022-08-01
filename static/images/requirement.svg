@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="requirement_gathering_icon" transform="translate(-44 -60)">
+    <rect id="Rectangle_8337" data-name="Rectangle 8337" width="60" height="60" transform="translate(44 60)" fill="#fff" opacity="0"/>
+    <g id="checklists" transform="translate(42 58)">
+      <path id="Path_21250" data-name="Path 21250" d="M8,19h8a1,1,0,0,0,1-1V15H15v2H9V11h3V9H8a1,1,0,0,0-1,1v8A1,1,0,0,0,8,19Z" fill="#f68121"/>
+      <path id="Path_21251" data-name="Path 21251" d="M12,13.586l-1.293-1.293L9.293,13.707l2,2a1,1,0,0,0,1.414,0l6-6L17.293,8.293Z" fill="#f68121"/>
+      <path id="Path_21252" data-name="Path 21252" d="M15,30H9V24h3V22H8a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V28H15Z" fill="#f68121"/>
+      <path id="Path_21253" data-name="Path 21253" d="M12,26.586l-1.293-1.293L9.293,26.707l2,2a1,1,0,0,0,1.414,0l6-6-1.414-1.414Z" fill="#f68121"/>
+      <path id="Path_21254" data-name="Path 21254" d="M16,35H8a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V36A1,1,0,0,0,16,35Zm-1,8H9V37h6Z" fill="#f68121"/>
+      <path id="Path_21255" data-name="Path 21255" d="M16,48H8a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V49A1,1,0,0,0,16,48Zm-1,8H9V50h6Z" fill="#f68121"/>
+      <path id="Path_21256" data-name="Path 21256" d="M57.707,5.293a1,1,0,0,0-1.414,0L50,11.586,40.707,2.293A1,1,0,0,0,40,2H3A1,1,0,0,0,2,3V61a1,1,0,0,0,1,1H50a1,1,0,0,0,1-1V21.414L61.707,10.707a1,1,0,0,0,0-1.414ZM49,60H4V4H39.586l8,8H41V7H39v6a1,1,0,0,0,1,1h7.586L24.293,37.293a1,1,0,0,0-.242.391l-2,6a1,1,0,0,0,1.265,1.265l6-2a1,1,0,0,0,.391-.242L49,23.414ZM25.437,39.851l1.712,1.712-2.568.856ZM29,40.586,26.414,38,57,7.414,59.586,10Z" fill="#f68121"/>
+      <path id="Path_21257" data-name="Path 21257" d="M45,56h2v2H45Z" fill="#f68121"/>
+      <path id="Path_21258" data-name="Path 21258" d="M41,56h2v2H41Z" fill="#f68121"/>
+      <path id="Path_21259" data-name="Path 21259" d="M37,56h2v2H37Z" fill="#f68121"/>
+    </g>
+  </g>
+</svg>

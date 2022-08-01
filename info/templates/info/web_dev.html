@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- home section -->
+    <section id="home" class="banner_container" style="background:none ;">
+      <div class="container hero-container" >
+        <div class="row align-items-center">
+          <div class="col-md-6   ban-img-section fade-overflow-hidden" data-aos="fade-right" >
+            <img class="ban-img"  src=" {% static 'images/website-design-development-services-3.png' %} " alt="banner_img" style="width:85%;">
+          </div>
+          <div class="col-md-6 my-5 my-md-0 text-center text-md-start fade-overflow-hidden" id="banner-content" data-aos="fade-left" data-aos-delay="500">
+              <!-- <p class="banner-subtitle">ASO</p> -->
+              <h2 class="single-service-title">Web Development</h2>
+              <p class="banner-title-text">Website offers the best way to communicate business information to your customers and attract more. As we know that most of the people spend their time on the internet, it’s high time for business owners to have a dedicated website for their business products or services with attractive User Interface because there are high chance where you might lose your online customer to your competitors.</p>
+              <div class=" contact-btn-section">
+                  <a class="nav-link  contact-btn btn-header" href=" {% url 'contact_us'%} ">Hire Us</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- About section -->
+    <section id="about" class="about_container">
+      <div class="about-1">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-sm-12 col-lg-6 text-center text-lg-start fade-overflow-hidden" data-aos="fade-right">
+                  
+                  <h2 class="about_title" style="color:#eaeaea;">Why <span>UI/UX Matters ?</span> </h2>
+                  <p class="about_text">In today’s world retaining people attention has become so difficult for Business owners but a great UI/UX design has the potential to do it. A compelling UI/UX design not only attracts people it also has the ability to convert visitors to buyers. It has become crucial for organizations and business owners to have great design to stay ahead in the online business. Good website design can make visitors spend more time on the website and this definitely helps in SEO perspective to rank on top of the SERP results.</p>
+                  <!-- <p class="about_text"> A good built App can take your business product or services around the globe within a short period of time. It’s high time for any business to start building their mobile application that works on any devices efficiently.</p> -->
+                  <div class="my-3 ">
+                      <a class="contact-btn" href="#">Find out more</a>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-lg-6 px-5 text-center text-md-start about-image fade-overflow-hidden" data-aos="fade-left"> 
+                  <img src=" {% static 'images/web-icon.png' %} " class="img-fluid" style="width: 85%;"> 
+              </div>
+          </div>
+          
+      </div>
+    </div>
+
+      
+      
+  </section>
+  <!-- About section exit -->
+
+  <!-- services section -->
+  <section id="brands" class="brand_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center ">
+                <p class="brand_subtitle">Our Workflow</p>
+                <!-- <h2 class="brand_title">Client showcase</h2> -->
+            </div>
+        </div>
+        <div class="row justify-content-center brand-row " >
+  
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+              <div class="card icon-card">
+                <img src=" {% static 'images/requeriments-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                  <a href=""><p class=" text-center">Requirement Gathering</p></a>
+
+              </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+              <div class="card icon-card">
+                <img src=" {% static 'images/wireframe-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                  <a href=""><p class=" text-center">Wireframe</p></a>
+
+              </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+              <div class="card icon-card">
+                <img src=" {% static 'images/ux-design-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                  <a href=""><p class=" text-center">Design</p></a>
+
+              </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+            <div class="card icon-card">
+              <img src=" {% static 'images/app-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                <a href=""><p class=" text-center">Review</p></a>
+
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+          <div class="card icon-card">
+            <img src=" {% static 'images/laptop-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+              <a href=""><p class=" text-center">Develop</p></a>
+
+          </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+        <div class="card icon-card">
+          <img src=" {% static 'images/test-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+            <a href=""><p class=" text-center">Test</p></a>
+
+        </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+      <div class="card icon-card">
+        <img src=" {% static 'images/deploy-svgrepo-com (1).svg' %} " alt="" style="height:40px;width:auto;">
+
+          <a href=""><p class=" text-center">Launch</p></a>
+
+      </div>
+  </div>
+  <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+    <div class="card icon-card">
+      <img src=" {% static 'images/support-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+        <a href=""><p class=" text-center">Maintain</p></a>
+
+    </div>
+</div>
+           
+           
+        </div>
+    </div>
+</section>
+
+
+  <section class="testimonials_container about_container" >
+    <div class="testimonials_inner">
+          <div class="container ">
+            
+              <div class="row align-items-center testimonials_content">
+                  <div class="col-sm-12 col-lg-5 px-5 text-center text-md-start testimonial-image fade-overflow-hidden" data-aos="fade-right">
+                      <img src=" {% static 'images/Web-Design-PNG-Image-Transparent-768x768.png' %} " class="img-fluid">
+                  </div>
+                    <div class="col-sm-12 col-lg-7 text-center text-lg-start fade-overflow-hidden" data-aos="fade-left">
+                    
+                            <h2 class="about_title" style="color:#eaeaea;">Why <span> Us ?</span></h2>
+                            <!-- <ul>
+                              <li><p class="about_text">Native Application</p></li>
+                              <li><p class="about_text">Web Based Application</p></li>
+                              <li><p class="about_text">Hybrid Application</p></li>
+                            </ul> -->
+
+                            <p class="about_text"> We have got talented and vibrant team of developers and designers who can understand your business requirement precisely. And build a responsive website for your B2B and B2C business right from the scratch with latest web technologies which could enhance your online presence and ROI. We do offer a custom web design and development package for the entire business in the online segment. We at Joni solutions provide you 24*7 support.</p>
+                            <!-- <p class="about_text"><span>Web based application</span> could be accessed via any browser in the world. It’s not mandatory for the users to download it on their devices. All they need is just an application url  {% static 'and' %}  internet. They rely on the browsers to execute the application.</p>
+                            <p class="about_text"> <span>Hybrid application</span> is actually a mix of both the native and web-based applications. The User Experience of the app is much better than others. Its light weighted so it can load on any device very quickly. Hybrid App can be built in very short period of time.</p>  -->
+
+                            <div class="my-5 ">
+                                <a class="contact-btn" href="#">Find out more</a>
+                            </div>
+                        
+                        
+                    </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% endblock %}

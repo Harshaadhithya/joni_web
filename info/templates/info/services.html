@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <!-- services section -->
+  <section class="services_container" style="margin-top: 6rem;">
+    <div>
+      <div class="container-fluid  services-inner-container">
+        <h1 class="text-center mt-5 display-5 fw-bold">Our <span class="theme-text">Services</span></h1>
+        <hr class="mx-auto mb-5 w-25 m-0">
+        <div class="row mb-5">
+          {% for service in services %}
+          <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+              <!-- card starts here -->
+              <div class="card h-100 w-90 shadow" style="height:100%; ">
+                <div class="card-img-top-container">
+                  <img src="{{service.main_image.url}}" alt="" class="card-img-top">
+                </div>
+                  <!-- <img src=" {% static 'images/web.svg' %} " alt="" class="card-img-top"> -->
+                  <div class="card-body">
+                    <h3 class="text-center">{{service.title}}</h3>
+                    <hr class="mx-auto w-75" style="color: rgb(200, 225, 233);">
+                    <p>
+                      {{service.description}}
+                    </p>
+                    <div class="my-center-button">
+                      <a class="contact-btn small-contact-btn" href=" {% url 'separate_service' service.short_title %} ">View More</a>
+                    </div>
+                  </div>
+              </div>
+              <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+          {% endfor %}
+          
+            
+        </div>
+    </div>
+    </div>
+   
+  </section>
+
+
+{% endblock %}

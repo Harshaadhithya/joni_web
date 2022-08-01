@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="seamless_backend_integration_icon" transform="translate(-532 -117)">
+    <rect id="Rectangle_8337" data-name="Rectangle 8337" width="60" height="60" transform="translate(532 117)" fill="#fff" opacity="0"/>
+    <g id="backend" transform="translate(531 116)">
+      <path id="Path_21086" data-name="Path 21086" d="M58.1,1H15.516a2.907,2.907,0,0,0-2.9,2.9V18.419H5.839A4.844,4.844,0,0,0,1,23.258V46.484a4.844,4.844,0,0,0,4.839,4.839h9.3l-1.29,3.871H10.677a2.907,2.907,0,0,0-2.9,2.9V61H36.806V58.1a2.907,2.907,0,0,0-2.9-2.9H30.73l-1.29-3.871h9.3a4.844,4.844,0,0,0,4.839-4.839v-.968H58.1a2.907,2.907,0,0,0,2.9-2.9V3.9A2.907,2.907,0,0,0,58.1,1ZM15.516,2.935H58.1a.969.969,0,0,1,.968.968V8.742H14.548V3.9A.969.969,0,0,1,15.516,2.935ZM5.839,20.355h32.9a2.907,2.907,0,0,1,2.9,2.9V41.645H2.935V23.258A2.907,2.907,0,0,1,5.839,20.355Zm37.742,5.806H55.194V39.71H43.581ZM34.871,58.1v.968H9.71V58.1a.969.969,0,0,1,.968-.968H33.9A.969.969,0,0,1,34.871,58.1Zm-6.182-2.9h-12.8l1.29-3.871H27.4Zm10.053-5.806H5.839a2.907,2.907,0,0,1-2.9-2.9v-2.9h38.71v2.9A2.907,2.907,0,0,1,38.742,49.387ZM58.1,43.581H43.581V41.645H57.129V24.226H43.581v-.968a4.844,4.844,0,0,0-4.839-4.839H14.548V10.677H59.065V42.613A.969.969,0,0,1,58.1,43.581Z" fill="#f68121"/>
+      <path id="Path_21087" data-name="Path 21087" d="M18,47h1.906v1.906H18Z" transform="translate(-0.54 -1.461)" fill="#f68121"/>
+      <path id="Path_21088" data-name="Path 21088" d="M22,47h1.906v1.906H22Z" transform="translate(-0.667 -1.461)" fill="#f68121"/>
+      <path id="Path_21089" data-name="Path 21089" d="M26,47h1.906v1.906H26Z" transform="translate(-0.794 -1.461)" fill="#f68121"/>
+      <path id="Path_21090" data-name="Path 21090" d="M21,5h1.906V6.906H21Z" transform="translate(-0.635 -0.189)" fill="#f68121"/>
+      <path id="Path_21091" data-name="Path 21091" d="M25,5h1.906V6.906H25Z" transform="translate(-0.762 -0.189)" fill="#f68121"/>
+      <path id="Path_21092" data-name="Path 21092" d="M17,5h1.906V6.906H17Z" transform="translate(-0.508 -0.189)" fill="#f68121"/>
+      <path id="Path_21093" data-name="Path 21093" d="M17,13h1.906v1.906H17Z" transform="translate(-0.508 -0.381)" fill="#f68121"/>
+      <path id="Path_21094" data-name="Path 21094" d="M21,13H57.209v1.906H21Z" transform="translate(-0.02 -0.381)" fill="#f68121"/>
+      <path id="Path_21095" data-name="Path 21095" d="M47,17H58.434v1.906H47Z" transform="translate(-1.246 -0.508)" fill="#f68121"/>
+      <path id="Path_21096" data-name="Path 21096" d="M47,21H58.434v1.906H47Z" transform="translate(-1.246 -0.635)" fill="#f68121"/>
+      <path id="Path_21097" data-name="Path 21097" d="M7.859,40.152H26.916a2.862,2.862,0,0,0,2.859-2.859V25.859A2.862,2.862,0,0,0,26.916,23H7.859A2.862,2.862,0,0,0,5,25.859V37.293A2.862,2.862,0,0,0,7.859,40.152ZM6.906,25.859a.954.954,0,0,1,.953-.953H26.916a.954.954,0,0,1,.953.953V37.293a.954.954,0,0,1-.953.953H7.859a.954.954,0,0,1-.953-.953Z" transform="translate(-0.189 -0.576)" fill="#f68121"/>
+      <path id="Path_21098" data-name="Path 21098" d="M0,0H12.053V1.906H0Z" transform="matrix(0.316, -0.949, 0.949, 0.316, 14.626, 36.4)" fill="#f68121"/>
+      <path id="Path_21099" data-name="Path 21099" d="M22.64,36.263l4.485-4.485L22.64,27.293,21.293,28.64l3.138,3.138-3.138,3.138Z" transform="translate(-0.622 -0.778)" fill="#f68121"/>
+      <path id="Path_21100" data-name="Path 21100" d="M14.418,34.916l-3.138-3.138,3.138-3.138-1.347-1.347L8.586,31.778l4.485,4.485Z" transform="translate(-0.358 -0.778)" fill="#f68121"/>
+      <path id="Path_21101" data-name="Path 21101" d="M33,23h7.623v1.906H33Z" transform="translate(-0.962 -0.699)" fill="#f68121"/>
+      <path id="Path_21102" data-name="Path 21102" d="M33,27h7.623v1.906H33Z" transform="translate(-0.962 -0.826)" fill="#f68121"/>
+      <path id="Path_21103" data-name="Path 21103" d="M33,31h7.623v1.906H33Z" transform="translate(-0.962 -0.953)" fill="#f68121"/>
+      <path id="Path_21104" data-name="Path 21104" d="M33,35h7.623v1.906H33Z" transform="translate(-0.962 -1.08)" fill="#f68121"/>
+      <path id="Path_21105" data-name="Path 21105" d="M35,39h1.906v1.906H35Z" transform="translate(-1.08 -1.207)" fill="#f68121"/>
+      <path id="Path_21106" data-name="Path 21106" d="M39,39h1.906v1.906H39Z" transform="translate(-1.207 -1.207)" fill="#f68121"/>
+    </g>
+  </g>
+</svg>

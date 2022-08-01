@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- home section -->
+    <section id="home" class="banner_container" style="background:none ;">
+      <div class="container hero-container" >
+        <div class="row align-items-center">
+          <div class="col-md-6   ban-img-section fade-overflow-hidden" data-aos="fade-right" >
+            <img class="ban-img"  src=" {% static 'images/ecommerce_mobile_app.png' %} " alt="banner_img" style="width:85%;">
+          </div>
+          <div class="col-md-6 my-5 my-md-0 text-center text-md-start fade-overflow-hidden" id="banner-content" data-aos="fade-left" data-aos-delay="500">
+              <!-- <p class="banner-subtitle">ASO</p> -->
+              <h2 class="single-service-title">App Development</h2>
+              <p class="banner-title-text">Mobile Application is a software intended to run on mobile devices, tablets and watches. It’s also known as app which can be downloaded and installed directly to your device from downloadable platforms like Google Play and App Stores.</p>
+              <div class=" contact-btn-section">
+                  <a class="nav-link  contact-btn btn-header" href=" {% url 'contact_us'%} ">Hire Us</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- About section -->
+    <section id="about" class="about_container">
+      <div class="about-1">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-sm-12 col-lg-6 text-center text-lg-start fade-overflow-hidden" data-aos="fade-right">
+                  
+                  <h2 class="about_title" style="color:#eaeaea;">Why <span>App Development ?</span> </h2>
+                  <p class="about_text">With the increase in numbers of App users Day by day. App has become an integral part of any online business in the world. App has given opportunity for business owners to identify their audience and interact with them directly. Tracking the performance and understanding customers usage of business app could play a major role in business decisions.</p>
+                  <p class="about_text"> A good built App can take your business product or services around the globe within a short period of time. It’s high time for any business to start building their mobile application that works on any devices efficiently.</p>
+                  <div class="my-5 ">
+                      <a class="contact-btn" href="#">Find out more</a>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-lg-6 px-5 text-center text-md-start about-image fade-overflow-hidden" data-aos="fade-left"> 
+                  <img src=" {% static 'images/mobile app development.png' %} " class="img-fluid"> 
+              </div>
+          </div>
+          <!-- <div class="row align-items-center">
+            <div class="col-sm-12 col-lg-6 px-5 text-center text-md-start about-image fade-overflow-hidden" data-aos="fade-left"> 
+                <img src=" {% static 'images/boost_img.png' %} " class="img-fluid"> 
+            </div>
+            <div class="col-sm-12 col-lg-6 text-center text-lg-start fade-overflow-hidden" data-aos="fade-right">
+                
+                <h2 class="about_title" style="color:#eaeaea;">We provide <span>Development</span> and <span>Digital Marketing</span> services</h2>
+                <p class="about_text">We at Joni solutions promise you to provide the best development services and digital marketing strategies which will tend to increase your online visibility.  We have a dedicated team of people who work on SEO, SMO, and SEM strategies, helping your business grow in comparatively less time.</p>
+                <div class="my-5">
+                    <a class="contact-btn" href="#">Find out more</a>
+                </div>
+            </div>
+            
+        </div> -->
+      </div>
+    </div>
+
+      
+      
+  </section>
+  <!-- About section exit -->
+
+  <!-- services section -->
+  <section id="brands" class="brand_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="brand_subtitle">Our Workflow</p>
+                <!-- <h2 class="brand_title">Client showcase</h2> -->
+            </div>
+        </div>
+        <div class="row justify-content-center brand-row " >
+           
+            <div class="col-6 col-md-4 col-lg-3 mb-5 px-lg-4">
+                <div class="card icon-card">
+                    <img src=" {% static 'images/strategy-svgrepo-com (1).svg' %} " alt="" style="height:40px;width:auto;">
+                    <a href=""><p class=" text-center">Strategy</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5 px-lg-4">
+                <div class="card icon-card">
+                  <img src=" {% static 'images/plan-idea-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+                    <a href=""><p class=" text-center">Analyse & Plan</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5 px-lg-4">
+                <div class="card icon-card">
+                  <img src=" {% static 'images/layout-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                  
+                    <a href=""><p class=" text-center">Wireframe the Concept</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5 px-lg-4">
+                <div class="card icon-card">
+                  
+                  <img src=" {% static 'images/ux-design-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                    <a href=""><p class=" text-center">UI/UX Design</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+                <div class="card icon-card">
+                  
+                  <img src=" {% static 'images/coding-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                    <a href=""><p class=" text-center">Develop</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+                <div class="card icon-card">
+                  <img src=" {% static 'images/test-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                    <a href=""><p class=" text-center">Test</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+                <div class="card icon-card">
+                  
+                  <img src=" {% static 'images/deploy-svgrepo-com (1).svg' %} " alt="" style="height:40px;width:auto;">
+
+                    <a href=""><p class=" text-center">Deploy</p></a>
+
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-5  px-lg-4">
+                <div class="card icon-card">
+                  <img src=" {% static 'images/support-svgrepo-com.svg' %} " alt="" style="height:40px;width:auto;">
+
+                    <a href=""><p class=" text-center">Support</p></a>
+
+                </div>
+            </div>
+           
+           
+        </div>
+    </div>
+</section>
+
+
+  <section class="testimonials_container about_container" >
+    <div class="testimonials_inner">
+          <div class="container ">
+            
+              <div class="row align-items-center testimonials_content">
+                  <div class="col-sm-12 col-lg-5 px-5 text-center text-md-start testimonial-image fade-overflow-hidden" data-aos="fade-right">
+                      <img src=" {% static 'images/native_app_development_vacter.png' %} " class="img-fluid">
+                  </div>
+                    <div class="col-sm-12 col-lg-7 text-center text-lg-start fade-overflow-hidden" data-aos="fade-left">
+                    
+                            <h2 class="about_title" style="color:#eaeaea;">Types of <span> Mobile Applications</span></h2>
+                            <!-- <ul>
+                              <li><p class="about_text">Native Application</p></li>
+                              <li><p class="about_text">Web Based Application</p></li>
+                              <li><p class="about_text">Hybrid Application</p></li>
+                            </ul> -->
+
+                            <p class="about_text"> <span >Native application</span>  means that the mobile application was built specifically for a particular operating system. In most of the case it’s either built for Android or iOS and it could be downloaded from their respective downloadable platforms. The performance of native app is always better and more secure.</p>
+                            <p class="about_text"><span>Web based application</span> could be accessed via any browser in the world. It’s not mandatory for the users to download it on their devices. All they need is just an application url  {% static 'and' %}  internet. They rely on the browsers to execute the application.</p>
+                            <p class="about_text"> <span>Hybrid application</span> is actually a mix of both the native and web-based applications. The User Experience of the app is much better than others. Its light weighted so it can load on any device very quickly. Hybrid App can be built in very short period of time.</p> 
+
+                            <div class="my-5 ">
+                                <a class="contact-btn" href="#">Find out more</a>
+                            </div>
+                        
+                        
+                    </div>
+              </div>
+          </div>
+      </div>
+  </section>
+{% endblock %}

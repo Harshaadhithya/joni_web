@@ -1,0 +1,85 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="contact_container">
+        <div class="container px-5">
+            <div class="row  contact_wrapper">
+                <div class="col-lg-5 contact-box-left px-5" >
+                    <h3 class="text-center  fw-bold">Contact Information</h3>
+                    <p class="text-center testimonial-heading mx-auto my-auto">Want to get in touch ? We'd love to hear from you. Here's how you can reach us...</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12   contact-img-container" data-aos="fade-right">
+                                <img src=" {% static 'images/—Pngtree—electronic communication information online mail_6269261.png' %} " >
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="contact-details">
+                      <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text"><p>+91 93450 66097</p></div>
+                      </div>
+                      <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text"><p>reachus@jonisolutions.com</p></div>
+                      </div>
+                      <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text"><p>Coimbatore</p></div>
+                      </div>
+                    </div>
+
+                    <div class="contact-social-links">
+                      <ul class="social-links-ul">
+                        <li class="social-links-li"><i class="fab fa-facebook-f"></i></li>
+                        <li class="social-links-li"><i class="fab fa-twitter"></i></li>
+                        <li class="social-links-li"><i class="fab fa-instagram"></i></li>
+                        <li class="social-links-li"><i class="fab fa-linkedin-in"></i></li>
+                        <!-- <li class="social-links-li"><i class="fab fa-youtube"></i></li> -->
+                     </ul>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-7 contact-box-right p-5 my-auto">
+                    <form id="contact_form" action="" method="POST" onsubmit="submithandler(event)">
+                      {% csrf_token %}
+                          <div class="mb-4 pt-2">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required >
+                          </div>
+                          <div class="mb-4 pt-2">
+                            <label for="email_address" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email_address" name="email_address" required>
+                          </div>
+                          <div class="mb-4 pt-2">
+                            <label for="mobile" class="form-label">Mobile No</label>
+                            <input type="tel" class="form-control" id="mobile" name="mobile" >
+                          </div>
+                          <div class="mb-4 pt-2">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="2" required></textarea>
+                          </div>
+                          <button type="submit" class="contact-btn mt-4"><i class="fas fa-paper-plane" style="margin-right:8px; color:#013c61;" ></i>Send Message</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+  {% endblock %}
+
+  {% block script_references %}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+      let submithandler=(e)=>{
+        
+      }
+      
+    </script>
+{% endblock script_references %}
+
+ 

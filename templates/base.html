@@ -1,0 +1,292 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if page %}
+    <title>JoniSolutions | {{page}}</title>
+    {% else %}
+    <title>JoniSolutions</title>
+    {% endif %}
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WHWVHST');</script>
+  <!-- End Google Tag Manager -->
+    <!-- aos css -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href=" {% static 'images/joni-favicon.png' %} ">
+
+    <!-- Bootstrap 5 CDN Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Owl Carousel CSS Links-->
+    <!-- <link rel="stylesheet" href=" {% static 'css/owl/owl.carousel.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/owl/owl.theme.default.min.css' %} "> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom File's Link -->
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/responsive.css' %} ">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFQ33MM1H9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KFQ33MM1H9');
+    </script>
+
+    {% block style_references %}
+    
+    {% endblock style_references %}
+
+    
+
+    
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="85" onload="DisplayMessages()">
+    <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHWVHST"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+    <!-- <div id="loader-wrapper" class="loader-wrapper">
+    </div> -->
+    <!-- NAVBAR CONTAINER -->
+    <header class="navbar_container">
+          <nav  class="navbar navbar-expand-md fixed-top" >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                  <img src=" {% static 'images/Final Logo - Joni.png' %} " class="img-fluid" alt="JONI Solutions">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <!-- <i class="fa-duotone fa-bars navbar-toggler-icon"></i> -->
+                <!-- <i class="fas fa-stream "></i> -->
+                <i class="fas fa-bars"></i>
+                <!-- <img src=" {% static 'images/nav-toggle.png' %} " alt="" style="width:25px;height:25px;"> -->
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+                <ul class="navbar-nav menu-navbar-nav">
+                  <li class="nav-item">
+                    {% if page == 'home' %}
+                    <a class="nav-link myactive-link hover-link" aria-current="page" href=" {% url 'home' %} ">Home</a>
+                    {% else %}
+                    <a class="nav-link hover-link" aria-current="page" href=" {% url 'home' %} ">Home</a>
+                    {% endif %}
+                  </li>
+                  <li class="nav-item">
+                    {% if page == 'about_us' %}
+                      <a class="nav-link myactive-link hover-link" href=" {% url 'about_us' %} ">About Us</a>
+                    {% else %}
+                      <a class="nav-link hover-link" href=" {% url 'about_us' %} ">About Us</a>
+                    {% endif %}
+                  </li>
+                  <li class="nav-item">
+                    {% if page == 'services' %}
+                      <a class="nav-link myactive-link hover-link" href=" {% url 'services' %} ">Services</a>
+                    {% else %}
+                      <a class="nav-link hover-link" href=" {% url 'services' %} ">Services</a>
+                    {% endif %}
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Testimonials</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Blogs</a>
+                  </li> -->
+                </ul>
+
+                <ul class="navbar-nav">
+                    <!-- <li class="nav-item text-center">
+                        <a class="nav-link contact-btn trnsprnt-btn" aria-current="page" href="#">Contact</a>
+                    </li> -->
+                    <li class="nav-item text-center">
+                        <a class="nav-link contact-btn" style="background:#2B87B9" aria-current="page" href=" {% url 'contact_us' %} ">Contact</a>
+                    </li>
+                </ul>
+
+              </div>
+            </div>
+          </nav>
+          
+    </header>
+    <!-- NAVBAR CONTAINER ENDS -->
+
+    
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="bg-light text-dark pt-5 pb-4">	
+
+		<div class="container text-center text-md-left">
+
+			<div class="row text-center text-md-left">
+
+				<div class="col-md-5 col-lg-4 col-xl-4 mx-auto mt-3">
+					<h5 class="text-uppercase mb-4 font-weight-bold text-info">About Us</h5>
+						<hr class="mb-4" style="color: rgb(143, 166, 174);">
+					<p>We at Joni solutions promise you to provide the best development services and digital marketing strategies which will tend to increase your online visibility. We have a dedicated team of people who work on SEO, SMO, and SEM strategies, helping your business grow in comparatively less time. </p>
+					
+				</div>
+
+				<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+					<h5 class="text-uppercase mb-4 font-weight-bold text-info">Let Us Help</h5>
+						<hr class="mb-4" style="color: rgb(143, 166, 174);">
+				<p>
+					<a href=" {% static 'index.html' %} " class="text-dark" style="text-decoration: none;"> Home</a>
+				</p>
+				<p>
+					<a href=" {% static 'about.html' %} " class="text-dark" style="text-decoration: none;"> About</a>
+				</p>
+				<p>
+					<a href=" {% static 'services.html' %} " class="text-dark" style="text-decoration: none;"> Services</a>
+				</p>
+				<p>
+					<a href=" {% static 'contact.html' %} " class="text-dark" style="text-decoration: none;">Contact</a>
+				</p>
+
+				</div>
+
+				
+
+				<div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+					<h5 class="text-uppercase mb-4 font-weight-bold text-info" >Contact</h5>
+						<hr class="mb-4" style="color: rgb(143, 166, 174);">
+            <div class="contact-details">
+              <div class="contact-row footer-contact-row" >
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class=" text-dark"><p>+91 93450 66097</p></div>
+              </div>
+              <div class="contact-row footer-contact-row" >
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="text-dark"><p>reachus@jonisolutions.com</p></div>
+              </div>
+              <div class="contact-row footer-contact-row" >
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class=" text-dark"><p>Coimbatore</p></div>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+              <div class=" ">
+    
+                <ul class="list-unstyled list-inline">
+                  <li class="list-inline-item">
+                    <a href="#" class="text-dark" ><i class="fab fa-facebook"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class= "text-dark" ><i class="fab fa-twitter"></i></a>
+                  </li>
+                  
+                  <li class="list-inline-item">
+                    <a href="#" class=" text-dark" ><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class=" text-dark" ><i class="fab fa-instagram"></i></a>
+                  </li>
+                </ul>
+                
+              </div>
+              
+            </div>
+				
+				</div>
+				
+			</div>
+
+			<hr class="mb-4" style="color: rgb(143, 166, 174);">
+			<div class=" row d-flex justify-content-center">
+					<div>
+						<p>	Copyright ©2022 All rights reserved by:
+							<a href="#" style="text-decoration: none;">
+								<strong class="text-info">Joni Solutions</strong>
+							</a>
+						</p>
+					</div>
+			</div>
+				
+				
+			</div>
+
+		</div>
+    </footer>
+  
+    
+    <!-- jQuery CDN Link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <!-- Bootstrap 5 JS CDN Links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Owl Carousel JS Links-->
+    <!-- <script src=" {% static 'js/owl/owl.carousel.js' %} "></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Custom Js Link -->
+    <script src=" {% static 'js/main.js' %} "></script>
+
+    <!-- aos for scroll reveal -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <script>
+      AOS.init({
+        duration: 1500,
+        once:true,
+        disable: 'mobile'
+        //disable: function () {
+          //var maxWidth = 768;
+          //return window.innerWidth < maxWidth;
+        //}
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      let DisplayMessages=(e)=>{
+        '{% for message in messages %}'
+          '{% if page == "contact_us" %}'
+            Swal.fire('Thank You!','{{message}}',
+            '{{message.tags}}')
+          '{% else %}'
+          Swal.fire('{{message}}','',
+          '{{message.tags}}')
+          '{% endif %}'
+        '{% endfor %}'
+      }
+      
+      
+    </script>
+
+    {% block script_references %}
+
+    {% endblock script_references %}  
+
+
+</body>
+</html>

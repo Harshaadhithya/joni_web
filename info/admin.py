@@ -4,4 +4,5 @@ from .models import *
 
 admin.site.register(Service)
 admin.site.register(Testimonial)
+admin.site.register(Enquiry)
 
