@@ -113,7 +113,13 @@
                                     </div>
                                     <div class="testimonial-client-name-wrapper my-auto">
                                       <p class=" mb-0 testimonial-client-name">{{testimonial.client_name}}</p>
+                                      {% if testimonial.client_position %}
+                                      
                                       <p class=" testimonial-client-organisation mb-0">{{testimonial.client_position}}, {{testimonial.client_organisation}}</p>
+                                      {% else %}
+                                      <p class=" testimonial-client-organisation mb-0">{{testimonial.client_organisation}}</p>
+
+                                      {% endif %}
                                     </div>
                                   </div>
                                 
