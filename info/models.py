@@ -30,12 +30,20 @@ class Testimonial(models.Model):
             return self.client_name
 
 class Enquiry(models.Model):
+    service_list=Service.objects.all()
+    service_choices=[]
+    for service in service_list:
+        choice_tuple=(f'{service}',f'{service}')
+        service_choices.append(choice_tuple)
+    service_choices.append(('other','other'))
+    
     name=models.CharField(max_length=120)
     email=models.EmailField()
     mobile=models.PositiveBigIntegerField(null=True,blank=True)
     message=models.TextField()
     created=models.DateTimeField(auto_now_add=True)
     is_read=models.BooleanField(default=0)
+    enquired_for=models.CharField(max_length=100,null=True,blank=True,choices=service_choices)
 
     def __str__(self):
         return self.name

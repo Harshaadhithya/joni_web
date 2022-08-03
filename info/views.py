@@ -236,4 +236,24 @@ def delete_testimonial(request,pk):
         messages.warning(request,"You are not authorised to view this page!")
         return redirect('home')   
 
+@login_required(login_url='signin')
+def update_enquiry(request,pk):
+    if request.user.profile.role=='admin':
+        page='Enquiry'
+        enquiry_obj=Enquiry.objects.get(id=pk)
+        form=EnquiryForm(instance=enquiry_obj)
+        if request.method=='POST':
+            form=EnquiryForm(request.POST,instance=enquiry_obj)
+            if form.is_valid():
+                form.save()
+                messages.success(request,"Enquiry Updated Successfully !")
+            else:
+                messages.error(request,"Something Went Wrong !")
+            return redirect('enquiry_list')
+        context={'form':form,'page':page}
+        return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home')   
+
 

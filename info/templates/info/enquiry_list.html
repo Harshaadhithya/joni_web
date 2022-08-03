@@ -37,10 +37,12 @@
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Mobile</th>
+                                                    <th>Enquired For</th>
                                                     <th>Message</th>
                                                     <th>Date</th>
                                                     <th>Is Read?</th>
                                                     <th>View</th>
+                                                    <th>Edit</th>
                                                     
                                                 
                                             </tr>
@@ -51,6 +53,7 @@
                                                 <td>{{enquiry.name}}</td>
                                                 <td>{{enquiry.email}}</td>
                                                 <td>{{enquiry.mobile}}</td>
+                                                <td>{{enquiry.enquired_for}}</td>
                                                 <td>{{enquiry.message|truncatechars:255}}</td>
                                                 
                                                 <td>{{enquiry.created}}</td>
@@ -61,6 +64,7 @@
                                                 {% endif %}
                                                 
                                                 <td><a href="" id="{{enquiry}}" data-bs-toggle="modal"  data-bs-target="#exampleModal_{{enquiry.id}}"><i class="fas fa-eye"></i></a></td>
+                                                <td><a href="{% url 'update_enquiry' enquiry.id %}"><i class="fas fa-edit" style="color:#ffc107;"></i></a></td>
                                                 
                                                 
                                             </tr>

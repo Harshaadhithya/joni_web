@@ -4,6 +4,21 @@ from django.forms import ModelForm,Textarea
 from .models import *
 
 
+class EnquiryForm(ModelForm):
+    class Meta:
+        model=Enquiry
+        fields='__all__'
+        exclude=['is_read']
+
+    def __init__(self,*args,**kwargs):
+        super(EnquiryForm,self).__init__(*args,**kwargs)
+        self.fields['name'].widget.attrs.update({'class':'form-control'})
+        self.fields['email'].widget.attrs.update({'class':'form-control big-textarea'})
+        self.fields['mobile'].widget.attrs.update({'class':'form-control'})
+        self.fields['message'].widget.attrs.update({'class':'form-control'})
+        self.fields['enquired_for'].widget.attrs.update({'class':'form-select'})
+
+
 class ServiceForm(ModelForm):
     class Meta:
         model=Service

@@ -9,10 +9,8 @@
         <div class="row  contact_wrapper">
             
             <div class="contact-box-right p-5 my-auto">
-                {% if page == 'service' %}
-                <h2 class="text-center">Service</h2>
-                {% elif page == 'testimonial' %}
-                <h2 class="text-center">Testimonial</h2>
+                {% if page %}
+                <h2 class="text-center">{{page}}</h2>
                 {% endif %}
                 <form action="" method="POST" onsubmit="submithandler(event)" enctype="multipart/form-data">
                     {% csrf_token %}
