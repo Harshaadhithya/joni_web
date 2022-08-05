@@ -133,6 +133,14 @@
                 table.search(this.value).draw();
             });
         });
+        $(document).ready(function() {
+            $('#intake_2').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            } );
+        } );
     </script>
     <script>
         let modal_body=document.getElementById("modal_body")
