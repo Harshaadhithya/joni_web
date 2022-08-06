@@ -126,21 +126,19 @@
     <script src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#intake_2').DataTable({
-                
-            });
+            $('#intake_2').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [{
+                    extend: 'excelHtml5',
+                    text: '<i class="fas fa-download"> Download</i>',
+                }
+                ]
+            } );
             $('#myInput').on('keyup', function () {
                 table.search(this.value).draw();
             });
         });
-        $(document).ready(function() {
-            $('#intake_2').DataTable( {
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            } );
-        } );
+        
     </script>
     <script>
         let modal_body=document.getElementById("modal_body")
