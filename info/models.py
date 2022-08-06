@@ -31,11 +31,20 @@ class Testimonial(models.Model):
 
 class Enquiry(models.Model):
     service_list=Service.objects.all()
-    service_choices=[]
-    for service in service_list:
-        choice_tuple=(f'{service}',f'{service}')
-        service_choices.append(choice_tuple)
-    service_choices.append(('other','other'))
+    # service_choices=[]
+    # for service in service_list:
+    #     choice_tuple=(f'{service}',f'{service}')
+    #     service_choices.append(choice_tuple)
+    # service_choices.append(('other','other'))
+    service_choices=(
+        ('App Development','App Development'),
+        ('Web Development','Web Development'),
+        ('Search Engine Optimization','Search Engine Optimization'),
+        ('Search Engine Marketing','Search Engine Marketing'),
+        ('App Store Optimization','App Store Optimization'),
+        ('Social Media Marketing','Social Media Marketing'),
+        ('Other','Other')
+        )
     
     name=models.CharField(max_length=120)
     email=models.EmailField()
