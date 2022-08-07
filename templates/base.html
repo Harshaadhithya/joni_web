@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href=" {% static 'images/joni-favicon.png' %} ">
+    <link rel="icon" type="image/png" href=" {% static 'images/favicon.png' %} ">
 
     <!-- Bootstrap 5 CDN Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
@@ -195,16 +195,16 @@
 					<h5 class="text-uppercase mb-4 font-weight-bold text-info">Let Us Help</h5>
 						<hr class="mb-4" style="color: rgb(143, 166, 174);">
 				<p>
-					<a href=" {% static 'index.html' %} " class="text-dark" style="text-decoration: none;"> Home</a>
+					<a href=" {% url 'home' %} " class="text-dark" style="text-decoration: none;"> Home</a>
 				</p>
 				<p>
-					<a href=" {% static 'about.html' %} " class="text-dark" style="text-decoration: none;"> About</a>
+					<a href=" {% url 'about_us' %} " class="text-dark" style="text-decoration: none;"> About</a>
 				</p>
 				<p>
-					<a href=" {% static 'services.html' %} " class="text-dark" style="text-decoration: none;"> Services</a>
+					<a href=" {% url 'services' %} " class="text-dark" style="text-decoration: none;"> Services</a>
 				</p>
 				<p>
-					<a href=" {% static 'contact.html' %} " class="text-dark" style="text-decoration: none;">Contact</a>
+					<a href=" {% url 'contact_us' %} " class="text-dark" style="text-decoration: none;">Contact</a>
 				</p>
 
 				</div>
@@ -233,17 +233,17 @@
     
                 <ul class="list-unstyled list-inline">
                   <li class="list-inline-item">
-                    <a href="#" class="text-dark" ><i class="fab fa-facebook"></i></a>
+                    <a href="https://m.facebook.com/JoniSolutions" class="text-dark" ><i class="fab fa-facebook"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#" class= "text-dark" ><i class="fab fa-twitter"></i></a>
+                    <a href="https://mobile.twitter.com/joni_solutions" class= "text-dark" ><i class="fab fa-twitter"></i></a>
                   </li>
                   
                   <li class="list-inline-item">
-                    <a href="#" class=" text-dark" ><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://in.linkedin.com/in/jonisolutions" class=" text-dark" ><i class="fab fa-linkedin-in"></i></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="#" class=" text-dark" ><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/jonisolutions/" class=" text-dark" ><i class="fab fa-instagram"></i></a>
                   </li>
                 </ul>
                 
@@ -259,7 +259,7 @@
 			<div class=" row d-flex justify-content-center">
 					<div>
 						<p>	Copyright ©2022 All rights reserved by:
-							<a href="#" style="text-decoration: none;">
+							<a href="{% url 'home' %}" style="text-decoration: none;">
 								<strong class="text-info">Joni Solutions</strong>
 							</a>
 						</p>
