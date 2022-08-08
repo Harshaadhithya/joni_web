@@ -195,7 +195,7 @@ a, a:hover, a:focus, a:active {
     display: flex;
     width: 100%;
     padding: 100px 0 100px;
-    background: url(../images/bg.png) no-repeat;
+    /* background: url(../images/bg.png) no-repeat; */
     background-size: cover; 
     justify-content: center;
     align-items: center;
