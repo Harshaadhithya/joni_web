@@ -20,7 +20,7 @@ class Testimonial(models.Model):
     client_name=models.CharField(max_length=60)
     client_organisation=models.CharField(max_length=30,null=True,blank=True)
     client_position=models.CharField(max_length=30,null=True,blank=True)
-    client_review=models.CharField(max_length=500)
+    client_review=models.CharField(max_length=1000)
     client_profile_img=models.ImageField(default='client_profile_img/profile_img.png',upload_to='client_profile_img/')
     created_at=models.DateTimeField(auto_now_add=True) 
     def __str__(self):
