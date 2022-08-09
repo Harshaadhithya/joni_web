@@ -130,7 +130,7 @@ a, a:hover, a:focus, a:active {
 
 .navbar_container .menu-navbar-nav{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     width: 75%;
 }
 

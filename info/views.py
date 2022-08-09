@@ -36,6 +36,9 @@ def about_us(request):
     context={'page':'about_us'}
     return render(request,'info/about.html',context)
 
+def dummy(request):
+    return HttpResponse
+
 def services_page(request):
     context={'page':'services'}
     services=Service.objects.all()
