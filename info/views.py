@@ -257,6 +257,13 @@ def update_enquiry(request,pk):
         return render(request,'info/form.html',context)
     else:
         messages.warning(request,"You are not authorised to view this page!")
-        return redirect('home')   
+        return redirect('home') 
+
+def sitemap(request):
+    return HttpResponse(open('sitemap.xml').read(), content_type='text/xml')  
+
+def robots(request):
+    return HttpResponse(open('Robots.txt').read(), content_type='text')  
+
 
 
