@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<section class="hero-section text-center">
+  <div class="container-fluid container--narrow">
+    <div class="hero-section__box">
+      <h2>Search for <span>Blogs</span></h2>
+    </div>
+
+    <div class="hero-section__search">
+      <form id="search_form" class="form" action="" method="get">
+        <div class="form__field">
+          <label for="formInput#search">Search By Projects </label>
+          <input class="input input--text blog_title_input" id="formInput#search" type="text" name="search_query"
+            placeholder="Search by Blog Title" >
+        </div>
+
+        <input class="contact-btn" type="submit" value="Search" />
+      </form>
+    </div>
+  </div>
+</section>
+<section class="services_container mt-0" style="margin-top: 6rem;">
+    
+    <div>
+      <div class="container-fluid  services-inner-container">
+
+         
+
+        <div class="row mb-5">
+          
+          
+          <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+            <a href=""><div class="card blog_card" style="width: 18rem;">
+             <div class="card-img-top-container p-0">
+               <img src="{% static 'images/dummy_blog_bg1.png' %}" class="blog_card_img_top img-fluid" alt="...">
+             </div>
+ 
+             
+             <div class="card-body">
+               <h5 class="card-title">Social Media Marketing Stratergies</h5>
+               <p class="blog_card_author">by Lakshman Subramniam</p>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               <div class="blog_tags">
+                 <span class="tag tag--pill tag--main">
+                   <small>Sem</small>
+                 </span>
+                 <span class="tag tag--pill tag--main">
+                   <small>Seo</small>
+                 </span>
+                 <span class="tag tag--pill tag--main">
+                   <small>Social Media Marketing</small>
+                 </span>
+               </div>
+               <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+             </div>
+           </div></a>
+           
+           </div>
+
+          <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+            <a href=""><div class="card blog_card" style="width: 18rem;">
+             <div class="card-img-top-container p-0">
+               <img src="{% static 'images/blog_card_img3.png' %}" class="blog_card_img_top img-fluid" alt="...">
+             </div>
+ 
+             
+             <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="blog_card_author">by Lakshman Subramniam</p>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               <div class="blog_tags">
+                 <span class="tag tag--pill tag--main">
+                   <small>Sem</small>
+                 </span>
+                 <span class="tag tag--pill tag--main">
+                   <small>Seo</small>
+                 </span>
+                 <span class="tag tag--pill tag--main">
+                   <small>Social Media Marketing</small>
+                 </span>
+               </div>
+               <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+             </div>
+           </div></a>
+           
+           </div>
+
+            <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+              <a href=""><div class="card blog_card" style="width: 18rem;">
+               <div class="card-img-top-container p-0">
+                 <img src="{% static 'images/blog_card_image2.png' %}" class="blog_card_img_top img-fluid" alt="...">
+               </div>
+   
+               
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="blog_card_author">by Lakshman Subramniam</p>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 <div class="blog_tags">
+                   <span class="tag tag--pill tag--main">
+                     <small>Sem</small>
+                   </span>
+                   <span class="tag tag--pill tag--main">
+                     <small>Seo</small>
+                   </span>
+                   <span class="tag tag--pill tag--main">
+                     <small>Social Media Marketing</small>
+                   </span>
+                 </div>
+                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+               </div>
+             </div></a>
+             
+             </div>
+          
+        <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+          <a href=""><div class="card blog_card" style="width: 18rem;">
+           <div class="card-img-top-container p-0">
+             <img src="{% static 'images/dummy_blog_bg1.png' %}" class="blog_card_img_top img-fluid" alt="...">
+           </div>
+
+           
+           <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="blog_card_author">by Lakshman Subramniam</p>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <div class="blog_tags">
+               <span class="tag tag--pill tag--main">
+                 <small>Sem</small>
+               </span>
+               <span class="tag tag--pill tag--main">
+                 <small>Seo</small>
+               </span>
+               <span class="tag tag--pill tag--main">
+                 <small>Social Media Marketing</small>
+               </span>
+             </div>
+             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+           </div>
+         </div></a>
+         
+         </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+           <a href=""><div class="card blog_card" style="width: 18rem;">
+            <div class="card-img-top-container p-0">
+              <img src="{% static 'images/dummy_blog_bg1.png' %}" class="blog_card_img_top img-fluid" alt="...">
+            </div>
+
+            
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="blog_card_author">by Lakshman Subramniam</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="blog_tags">
+                <span class="tag tag--pill tag--main">
+                  <small>Sem</small>
+                </span>
+                <span class="tag tag--pill tag--main">
+                  <small>Seo</small>
+                </span>
+                <span class="tag tag--pill tag--main">
+                  <small>Social Media Marketing</small>
+                </span>
+              </div>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div></a>
+          
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+            <a href=""><div class="card blog_card" style="width: 18rem;">
+             <div class="card-img-top-container p-0">
+               <img src="{% static 'images/dummy_blog_bg1.png' %}" class="blog_card_img_top img-fluid" alt="...">
+             </div>
+ 
+             
+             <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="blog_card_author">by Lakshman Subramniam</p>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               <div class="blog_tags">
+                 <span class="tag tag--pill tag--main">
+                   <small>Sem</small>
+                 </span>
+                 <span class="tag tag--pill tag--main">
+                   <small>Seo</small>
+                 </span>
+                 <span class="tag tag--pill tag--main">
+                   <small>Social Media Marketing</small>
+                 </span>
+               </div>
+               <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+             </div>
+           </div></a>
+           
+           </div>
+          
+            
+        </div>
+        <div class="pagination">
+          <ul class="container">
+            <li><a href="#" class="btn btn--disabled">&#10094; Prev</a></li>
+            <li><a href="#" class="btn btn--sub">01</a></li>
+            <li><a href="#" class="btn">02</a></li>
+            <li><a href="#" class="btn">03</a></li>
+            <li><a href="#" class="btn">04</a></li>
+            <li><a href="#" class="btn">05</a></li>
+            <li><a href="#" class="btn">06</a></li>
+            <li><a href="#" class="btn">07</a></li>
+            <li><a href="#" class="btn">08</a></li>
+            <li><a href="#" class="btn">09</a></li>
+            <li><a href="#" class="btn">10</a></li>
+            <li><a href="#" class="btn">Next &#10095;</a></li>
+          </ul>
+        </div>
+       </div>
+    </div>
+   
+</section>
+
+{% endblock %}
