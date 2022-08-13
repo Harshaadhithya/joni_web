@@ -14,7 +14,7 @@
     <div class="hero-section__search">
       <form id="search_form" class="form" action="" method="get">
         <div class="form__field">
-          <label for="formInput#search">Search By Projects </label>
+          <label for="formInput#search">Search By Blogs </label>
           <input class="input input--text blog_title_input" id="formInput#search" type="text" name="search_query"
             placeholder="Search by Blog Title" >
         </div>
@@ -33,34 +33,37 @@
 
         <div class="row mb-5">
           
-          
-          <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
-            <a href=""><div class="card blog_card" style="width: 18rem;">
-             <div class="card-img-top-container p-0">
-               <img src="{% static 'images/dummy_blog_bg1.png' %}" class="blog_card_img_top img-fluid" alt="...">
-             </div>
- 
-             
-             <div class="card-body">
-               <h5 class="card-title">Social Media Marketing Stratergies</h5>
-               <p class="blog_card_author">by Lakshman Subramniam</p>
-               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-               <div class="blog_tags">
-                 <span class="tag tag--pill tag--main">
-                   <small>Sem</small>
-                 </span>
-                 <span class="tag tag--pill tag--main">
-                   <small>Seo</small>
-                 </span>
-                 <span class="tag tag--pill tag--main">
-                   <small>Social Media Marketing</small>
-                 </span>
-               </div>
-               <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-             </div>
-           </div></a>
-           
-           </div>
+          {% for blog in blogs %}
+            <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
+              <a href="{% url 'view_blog' blog.id  %}"><div class="card blog_card" style="width: 18rem;">
+              <div class="card-img-top-container p-0">
+                <img src="{{blog.cover_image.url}}" class="blog_card_img_top img-fluid" alt="...">
+              </div>
+  
+              
+              <div class="card-body">
+                <h5 class="card-title">{{blog.title}}</h5>
+                <p class="blog_card_author">by {{blog.author}}</p>
+                <p class="card-text">{{blog.description}}</p>
+                <div class="blog_tags">
+                  {% for tag in blog.tags.all %}
+                  <span class="tag tag--pill tag--main">
+                    <small>{{tag}}</small>
+                  </span>
+                  {% endfor %}
+                  <!-- <span class="tag tag--pill tag--main">
+                    <small>Seo</small>
+                  </span>
+                  <span class="tag tag--pill tag--main">
+                    <small>Social Media Marketing</small>
+                  </span> -->
+                </div>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div></a>
+            
+            </div>
+           {% endfor%}
 
           <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
             <a href=""><div class="card blog_card" style="width: 18rem;">

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <!-- <section class="services_container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.media}}
+            {{form.as_p}}
+        </form>
+    </section> -->
+    <section class="contact_container">
+        <div class="container px-5 myform-container blog-form-container">
+            
+            <div class="row  contact_wrapper">
+                {{ form.errors }}
+                {{ form.non_field_errors }}
+                <div class="contact-box-right p-5 my-auto">
+                    {% if page %}
+                    <h2 class="text-center">{{page}}</h2>
+                    {% endif %}
+                    <form action="" method="POST" onsubmit="submithandler(event)" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.media}}
+                        {% for field in form %}
+                            <div class="mb-4 pt-2">
+                                <label for="exampleFormControlInput1" class="form-label">{{field.label}}</label>
+
+                                {{field}}
+                            </div>
+                        {% endfor %}
+                        
+                          
+                        <button type="submit" class="contact-btn mt-4">Submit</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+    
+{% endblock %}
+
+{% block script_references %}
+
+{% endblock script_references %}  

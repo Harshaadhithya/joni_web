@@ -3,10 +3,11 @@ backports.zoneinfo==0.2.1
 dj-static==0.0.6
 djangify==1.0.0
 Django==3.2.15
+django-ckeditor==6.5.0
+django-js-asset==2.0.0
 gunicorn==20.0.4
 Pillow==9.2.0
 pytz==2022.1
 sqlparse==0.4.2
 static3==0.7.0
 whitenoise==6.2.0
-psycopg2==2.9.1

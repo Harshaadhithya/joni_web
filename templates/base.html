@@ -37,9 +37,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom File's Link -->
     <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
     <link rel="stylesheet" href=" {% static 'css/responsive.css' %} ">
+
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFQ33MM1H9"></script>
@@ -51,6 +54,7 @@
       gtag('config', 'G-KFQ33MM1H9');
     </script>
 
+    
     {% block style_references %}
     
     {% endblock style_references %}
@@ -108,6 +112,13 @@
                       <a class="nav-link hover-link" href=" {% url 'services' %} ">Services</a>
                     {% endif %}
                   </li>
+                  <li class="nav-item">
+                    {% if page == 'blogs' %}
+                      <a class="nav-link myactive-link hover-link" href=" {% url 'blog_home' %} ">Blogs</a>
+                    {% else %}
+                      <a class="nav-link hover-link" href=" {% url 'blog_home' %} ">Blogs</a>
+                    {% endif %}
+                  </li>
                   {% if request.user.is_authenticated %}
                     {% if request.user.profile.role == 'admin' %}
                       <li class="nav-item dropdown desktop-admin-menu">
@@ -118,6 +129,9 @@
                           <li><a class="dropdown-item" href="{% url 'enquiry_list' %}">Enquiries</a></li>
                           <li><a class="dropdown-item" href="{% url 'manage_service' %}">Manage Services</a></li>
                           <li><a class="dropdown-item" href="{% url 'manage_testimonials' %}">Manage Testimonials</a></li>
+                          
+                          <li><a class="dropdown-item" href="{% url 'manage_blogs' %}">Manage Blogs</a></li>
+
                           <li><a class="dropdown-item" href="{% url 'user_list' %}">Users</a></li>
                           
                         </ul>
@@ -132,6 +146,9 @@
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'manage_testimonials' %}">Manage Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'manage_blogs' %}">Manage Blogs</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'user_list' %}">Users</a>
@@ -322,6 +339,15 @@
       
       
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      $(document).ready(function() {
+        $('.select-item').select2();
+      });
+    </script>
+
+   
 
     
     {% block script_references %}

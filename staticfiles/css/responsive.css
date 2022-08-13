@@ -72,10 +72,10 @@
         padding: 12px 29px !important;
     }
 
-    .navbar_container .navbar-collapse{
+    /* .navbar_container .navbar-collapse{
         background: var(--bg-white);
        
-    }
+    } */
 
     .about_container .about_title{
         font-size: 24px;
@@ -149,6 +149,11 @@
 
     .mobile-admin-menu{
         display: block;
+    }
+
+    .navbar_container .navbar-collapse{
+        background: var(--bg-white);
+       
     }
     
 }

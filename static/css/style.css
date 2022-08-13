@@ -740,6 +740,23 @@ a, a:hover, a:focus, a:active {
     font-weight: 600;
   }
 
+  .form-select{
+    border: none;
+    border-bottom:1px solid #b7d0df;
+    border-radius: 0;
+    padding: 5px;
+    color: #2B87B9;
+    font-weight: 600;
+}
+
+.form-select:focus {
+    border:none;
+    /* border-color: #fff; */
+    box-shadow: none;
+    border-bottom:1px solid #2B87B9;
+    color: #2B87B9;
+    font-weight: 600;
+  }
   .contact_container h3{
       color: #fff;
       padding-top: 2rem;
@@ -1099,7 +1116,7 @@ box-shadow: 1px 1px 11px 1px rgba(0,0,0,0.26);
     color: #2d2d39;
 }
 
-.blog_card .blog_card_author{
+.blog_card_author{
     font-size: 1rem;
     font-style: italic;
     font-weight: 600;
@@ -1284,6 +1301,34 @@ box-shadow: 1px 1px 11px 1px rgba(0,0,0,0.26);
   .pagination .btn.btn--sub {
     color: #e5e7eb !important;
     background-color: #2B87B9;
+  }
+
+  .side-card{
+    height: fit-content !important;
+  }
+
+  .card-header{
+    /* background-image: linear-gradient(to right top, #000b18, #081929, #09243a, #07304d, #013c61); */
+    background: #081929;
+    color: #fcfcfc;
+  }
+
+  .side-card-tags a{
+    color: #2B87B9 !important;
+    font-weight: 600;
+  }
+
+  .blog-form-container{
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+
+  .django-ckeditor-widget{
+    width: 100% !important;
+  }
+
+  .cke_editor_id_body{
+    width: 100% !important;
   }
   
 
