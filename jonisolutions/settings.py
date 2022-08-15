@@ -62,11 +62,62 @@ CKEDITOR_CONFIGS = {
             ['Flash','Table'],
             ['TextColor','BGColor'],
             ['Smiley','SpecialChar'],
-            ['RemoveFormat', 'Source']
-        ]
+            ['RemoveFormat', 'Source'],
+
+        ],
+        # 'extraPlugins':','.join(['youtube'])
     }
 }
 
+# CKEDITOR_CONFIGS={
+#   'default': {
+#     'width': '100%',
+#     'height': 600,
+#     'toolbar': 'Custom',
+#     'extraPlugins': ','.join([
+#       'codesnippet',
+#       'youtube'
+#     ]),
+#     'toolbar_Custom': [
+#       [
+#         'Bold',
+#         'Italic',
+#         'Underline'
+#       ],
+#       [
+#         'Font',
+#         'FontSize',
+#         'TextColor',
+#         'BGColor'
+#       ],
+#       [
+#         'NumberedList',
+#         'BulletedList',
+#         '-',
+#         'Outdent',
+#         'Indent',
+#         '-',
+#         'JustifyLeft',
+#         'JustifyCenter',
+#         'JustifyRight',
+#         'JustifyBlock'
+#       ],
+#       [
+#         'Link',
+#         'Unlink'
+#       ],
+#       [
+#         'RemoveFormat',
+#         'Source',
+#         'CodeSnippet',
+#         'Image',
+#         'Youtube'
+#       ]
+#     ],
+    
+#   },
+  
+# }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
