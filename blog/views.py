@@ -27,15 +27,42 @@ def create_blog(request):
     if request.user.profile.role=='admin':
         page='Create New Blog'
         form=BlogForm(initial={'author': request.user.profile})
+        tags=Tag.objects.all()
         if request.method=='POST':
+            post=request.POST.copy()
+            tag_list=[]
+            for tag_id in request.POST.getlist('tags'):
+                try:
+                    if Tag.objects.filter(id=tag_id).exists(): #if this arises any error then there exist no such tag, this error is arised because we will be getting id if already tag is exist, else we will get the name of the new tag entered and when we try to match with tag id it causes an error.
+                        pass
+                    
+                    else:
+                        tag_obj=Tag.objects.create(name=tag_id)
+                        tag_id=tag_obj.id
+
+                except:
+                    tag_obj=Tag.objects.create(name=tag_id)
+                    tag_id=tag_obj.id
+                tag_list.append(tag_id)
+
+            post.setlist('tags', tag_list)
+            request.POST=post
+            print(request.POST)
+            # print(request.POST)
             form=BlogForm(request.POST,request.FILES)
+            # print("tags",request.POST.get('tags'))
+            # print(request.POST.getlist('tags'))
+            
+            print("before is valid")      
             if form.is_valid():
+                print("inside is valid")
                 form.save()
+                print("after save")
                 messages.success(request,"Blog Posted Successfully!")
                 return redirect('blog_home')
             else:
                 messages.error(request,"Failed to Post!")
-        context={'form':form,'page':page}
+        context={'form':form,'page':page,'tags':tags}
         return render(request,'blog/blog_form.html',context)
     else:
         messages.warning(request,"You are not authorised to view this page!")
