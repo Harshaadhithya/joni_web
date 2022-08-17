@@ -98,6 +98,24 @@ def update_blog(request,pk):
         page=f'update {blog_obj.title}'
         form=BlogForm(instance=blog_obj)
         if request.method=='POST':
+            post=request.POST.copy()
+            tag_list=[]
+            for tag_id in request.POST.getlist('tags'):
+                try:
+                    if Tag.objects.filter(id=tag_id).exists(): #if this arises any error then there exist no such tag, this error is arised because we will be getting id if already tag is exist, else we will get the name of the new tag entered and when we try to match with tag id it causes an error.
+                        pass
+                    
+                    else:
+                        tag_obj=Tag.objects.create(name=tag_id)
+                        tag_id=tag_obj.id
+
+                except:
+                    tag_obj=Tag.objects.create(name=tag_id)
+                    tag_id=tag_obj.id
+                tag_list.append(tag_id)
+
+            post.setlist('tags', tag_list)
+            request.POST=post
             form=BlogForm(request.POST,request.FILES,instance=blog_obj)
             if form.is_valid():
                 form.save()
