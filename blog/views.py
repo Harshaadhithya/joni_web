@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required(login_url='signin')
+# @login_required(login_url='signin')
 def blog_home(request):
     blogs=Blog.objects.filter().order_by('-created')
     context={'blogs':blogs,'page':'blogs'}
@@ -68,7 +68,7 @@ def create_blog(request):
         messages.warning(request,"You are not authorised to view this page!")
         return redirect('home')
 
-@login_required(login_url='signin')
+
 def view_blog(request,pk):
     
     blog_obj=Blog.objects.get(id=pk)

@@ -113,15 +113,13 @@
                     {% endif %}
                   </li>
                   <li class="nav-item">
-                    {% if request.user.is_authenticated %}
-                      {% if request.user.profile.role == 'admin' %}
+                    
                         {% if page == 'blogs' %}
                           <a class="nav-link myactive-link hover-link" href=" {% url 'blog_home' %} ">Blogs</a>
                         {% else %}
                           <a class="nav-link hover-link" href=" {% url 'blog_home' %} ">Blogs</a>
                         {% endif %}
-                      {% endif %}
-                    {% endif %}
+                     
                     
                   </li>
                   {% if request.user.is_authenticated %}
@@ -224,6 +222,9 @@
 				</p>
 				<p>
 					<a href=" {% url 'services' %} " class="text-dark" style="text-decoration: none;"> Services</a>
+				</p>
+        <p>
+					<a href=" {% url 'blog_home' %} " class="text-dark" style="text-decoration: none;"> Blogs</a>
 				</p>
 				<p>
 					<a href=" {% url 'contact_us' %} " class="text-dark" style="text-decoration: none;">Contact</a>
