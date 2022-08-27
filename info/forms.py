@@ -25,6 +25,7 @@ class ServiceForm(ModelForm):
         fields='__all__'
         labels={
             'main_image':'Cover Image',
+            'meta_keywords':'Meta Keywords (Enter comma seperated values : key1, key word 2, key3)'
         }
         exclude=['main_page_link']
         
@@ -39,6 +40,12 @@ class ServiceForm(ModelForm):
         self.fields['description'].widget.attrs.update({'class':'form-control big-textarea'})
         self.fields['short_title'].widget.attrs.update({'class':'form-control'})
         self.fields['main_image'].widget.attrs.update({'class':'form-control'})
+        self.fields['meta_description'].widget.attrs.update({'class':'form-control '})
+        self.fields['meta_title'].widget.attrs.update({'class':'form-control'})
+        self.fields['meta_keywords'].widget.attrs.update({'class':'form-control big-textarea'})
+
+
+        
 
 
 class TestimonialForm(ModelForm):
@@ -59,3 +66,17 @@ class TestimonialForm(ModelForm):
         self.fields['client_profile_img'].widget.attrs.update({'class':'form-control'})
 
 
+class PageForm(ModelForm):
+    class Meta:
+        model=Page
+        fields='__all__'
+        exclude=['name']
+        labels={
+            'meta_keywords':'Meta Keywords (Enter comma seperated values : key1, key word 2, key3)'
+        }
+    
+    def __init__(self,*args,**kwargs):
+        super(PageForm,self).__init__(*args,**kwargs)
+        self.fields['meta_title'].widget.attrs.update({'class':'form-control'})
+        self.fields['meta_description'].widget.attrs.update({'class':'form-control'})
+        self.fields['meta_keywords'].widget.attrs.update({'class':'form-control big-textarea'})

@@ -7,6 +7,7 @@ from .forms import *
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from info.models import Page
 
 
 # Create your views here.
@@ -14,7 +15,11 @@ from django.contrib.auth.decorators import login_required
 # @login_required(login_url='signin')
 def blog_home(request):
     blogs=Blog.objects.filter().order_by('-created')
-    context={'blogs':blogs,'page':'blogs'}
+    context={'blogs':blogs}
+    page_obj,_=Page.objects.get_or_create(name='blogs')
+    context['meta_title']=page_obj.meta_title
+    context['meta_description']=page_obj.meta_description
+    context['meta_keywords']=page_obj.meta_keywords
     return render(request,'blog/blog_home.html',context)
 
 def sample_blog(request):

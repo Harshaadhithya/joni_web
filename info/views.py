@@ -25,7 +25,11 @@ class EmailThread(Thread):
 
 # Create your views here.
 def home(request):
-    context={'page':'home'}
+    context={}
+    page_obj,_=Page.objects.get_or_create(name='home')
+    context['meta_title']=page_obj.meta_title
+    context['meta_description']=page_obj.meta_description
+    context['meta_keywords']=page_obj.meta_keywords
     services=Service.objects.all()
     testimonials=Testimonial.objects.all()
     context['services']=services
@@ -33,7 +37,11 @@ def home(request):
     return render(request,'info/index.html',context)
 
 def about_us(request):
-    context={'page':'about_us'}
+    context={}
+    page_obj,_=Page.objects.get_or_create(name='about-us')
+    context['meta_title']=page_obj.meta_title
+    context['meta_description']=page_obj.meta_description
+    context['meta_keywords']=page_obj.meta_keywords
     return render(request,'info/about.html',context)
 
 def dummy(request):
@@ -46,7 +54,11 @@ def services_page(request):
     return render(request,'info/services.html',context)
 
 def contact_us(request):
-    context={'page':'contact_us'}
+    context={}
+    page_obj,_=Page.objects.get_or_create(name='contact')
+    context['meta_title']=page_obj.meta_title
+    context['meta_description']=page_obj.meta_description
+    context['meta_keywords']=page_obj.meta_keywords
     if request.method=='POST':
         print('mail sent')
         name=request.POST['name']
@@ -76,7 +88,11 @@ def contact_us(request):
 def separate_service(request,service_name):
     try:
         service_obj=Service.objects.get(url_title=service_name)
-        return render(request,f'info/{service_obj.short_title}.html')
+        context={}
+        context['meta_title']=service_obj.meta_title
+        context['meta_description']=service_obj.meta_description
+        context['meta_keywords']=service_obj.meta_keywords
+        return render(request,f'info/{service_obj.short_title}.html',context)
     except:
         messages.error(request,"Page not Found!")
         return redirect('home')
@@ -138,7 +154,7 @@ def add_service(request):
         return render(request,'info/form.html',context)
     else:
         messages.warning(request,"You are not authorised to view this page!")
-        return redirect('home')   
+        return redirect('home')  
 
 @login_required(login_url='signin')
 def edit_service(request,pk):
@@ -259,6 +275,36 @@ def update_enquiry(request,pk):
             else:
                 messages.error(request,"Something Went Wrong !")
             return redirect('enquiry_list')
+        context={'form':form,'page':page}
+        return render(request,'info/form.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home') 
+
+@login_required(login_url='signin')
+def manage_page_details(request):
+    if request.user.profile.role=='admin':
+        page_objs=Page.objects.all()
+        context={'page_objs':page_objs}
+        return render(request,'info/manage_page_details.html',context)
+    else:
+        messages.warning(request,"You are not authorised to view this page!")
+        return redirect('home') 
+
+@login_required(login_url='signin')
+def edit_page_detail(request,pk):
+    if request.user.profile.role=='admin':
+        page_obj=Page.objects.get(id=pk)
+        page=page_obj.name
+        form=PageForm(instance=page_obj)
+        if request.method=='POST':
+            form=PageForm(request.POST,instance=page_obj)
+            if form.is_valid():
+                form.save()
+                messages.success(request,"Page Details Updated Successfully !")
+            else:
+                messages.error(request,"Something Went Wrong !")
+            return redirect('manage_page_details')
         context={'form':form,'page':page}
         return render(request,'info/form.html',context)
     else:

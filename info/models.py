@@ -2,6 +2,7 @@ from distutils.command.upload import upload
 from email import message
 from email.policy import default
 from math import fabs
+from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -13,6 +14,10 @@ class Service(models.Model):
     description=models.CharField(max_length=1500)
     main_image=models.ImageField(null=False,blank=False,upload_to='service_img/')
     main_page_link=models.URLField(max_length=2000,null=True,blank=True)
+    meta_title=models.TextField(null=True)
+    meta_description=models.TextField(null=True)
+    meta_keywords=models.TextField(null=True)
+    
     
     def __str__(self):
         return self.title
@@ -58,3 +63,11 @@ class Enquiry(models.Model):
     def __str__(self):
         return self.name
 
+class Page(models.Model):
+    name=models.CharField(max_length=200,unique=True)
+    meta_title=models.TextField(null=True)
+    meta_description=models.TextField(null=True)
+    meta_keywords=models.TextField(null=True)
+
+    def __str__(self):
+        return self.name

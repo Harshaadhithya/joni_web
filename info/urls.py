@@ -17,6 +17,8 @@ urlpatterns=[
     path('add_testimonial',views.add_testimonial,name='add_testimonial'),
     path('edit_testimonial/<str:pk>/',views.edit_testimonial,name='edit_testimonial'),
     path('delete_testimonial/<str:pk>/',views.delete_testimonial,name='delete_testimonial'),
+    path('manage_page_details',views.manage_page_details,name='manage_page_details'),
+    path('edit_page_detail/<str:pk>/',views.edit_page_detail,name='edit_page_detail'),
     path('sitemap.xml',views.sitemap,name='sitemap'),
     path('Robots.txt',views.robots,name='robots')
 ]
