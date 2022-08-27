@@ -74,7 +74,13 @@ def contact_us(request):
     return render(request,'info/contact.html',context)
 
 def separate_service(request,service_name):
-    return render(request,f'info/{service_name}.html')
+    try:
+        service_obj=Service.objects.get(url_title=service_name)
+        return render(request,f'info/{service_obj.short_title}.html')
+    except:
+        messages.error(request,"Page not Found!")
+        return redirect('home')
+    
 
 @login_required(login_url='signin')
 def enquiry_list(request):

@@ -116,7 +116,7 @@
                     <div class="card-header">Related Blogs</div>
                     <div class="card-body">
                         {% for blog in related_blogs %}
-                        <a href="{% url 'view_blog' blog.id  %}"><div class="card blog_card mb-3" style="width: 18rem;">
+                        <a href="{% url 'view_blog' blog.url_title  %}"><div class="card blog_card mb-3" style="width: 18rem;">
                             <div class="card-img-top-container p-0">
                               <img src="{{blog.cover_image.url}}" class="blog_card_img_top img-fluid" alt="...">
                             </div>

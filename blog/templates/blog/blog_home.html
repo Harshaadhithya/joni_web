@@ -35,7 +35,7 @@
           
           {% for blog in blogs %}
             <div class="col-12 col-md-6 col-lg-4 mb-5  service-col">
-              <a href="{% url 'view_blog' blog.id  %}"><div class="card blog_card" style="width: 18rem;">
+              <a href="{% url 'view_blog' blog.url_title  %}"><div class="card blog_card" style="width: 18rem;">
               <div class="card-img-top-container p-0">
                 <img src="{{blog.cover_image.url}}" class="blog_card_img_top img-fluid" alt="...">
               </div>

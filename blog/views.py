@@ -56,7 +56,9 @@ def create_blog(request):
             print("before is valid")      
             if form.is_valid():
                 print("inside is valid")
-                form.save()
+                blog_obj=form.save(commit=False)
+                blog_obj.url_title=blog_obj.title.replace(" ","-")
+                blog_obj.save()
                 print("after save")
                 messages.success(request,"Blog Posted Successfully!")
                 return redirect('blog_home')
@@ -70,16 +72,19 @@ def create_blog(request):
 
 
 def view_blog(request,pk):
-    
-    blog_obj=Blog.objects.get(id=pk)
-    tags=blog_obj.tags.all()
-    related_blogs=[]
-    for tag in tags:
-        related_blogs+=Blog.objects.distinct().filter(tags__name__icontains=tag.name)
-    related_blogs=list(set(related_blogs))
-    services=Service.objects.all()
-    context={'blog_obj':blog_obj,'related_blogs':related_blogs,'services':services}
-    return render(request,'blog/view_blog.html',context)
+    try:
+        blog_obj=Blog.objects.get(url_title=pk)
+        tags=blog_obj.tags.all()
+        related_blogs=[]
+        for tag in tags:
+            related_blogs+=Blog.objects.distinct().filter(tags__name__icontains=tag.name)
+        related_blogs=list(set(related_blogs))
+        services=Service.objects.all()
+        context={'blog_obj':blog_obj,'related_blogs':related_blogs,'services':services}
+        return render(request,'blog/view_blog.html',context)
+    except:
+        messages.error(request,"Page not found!")
+        return redirect('home')
 
 @login_required(login_url='signin')
 def manage_blogs(request):

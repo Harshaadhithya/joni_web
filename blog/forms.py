@@ -10,7 +10,7 @@ class BlogForm(ModelForm):
     class Meta:
         model=Blog
         fields='__all__'
-        exclude=[]
+        exclude=['url_title']
 
     def __init__(self,*args,**kwargs):
         super(BlogForm,self).__init__(*args,**kwargs)

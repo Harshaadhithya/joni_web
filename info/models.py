@@ -8,6 +8,7 @@ from django.db import models
 
 class Service(models.Model):
     title=models.CharField(max_length=60)
+    url_title=models.CharField(max_length=60,null=True,unique=True)
     short_title=models.CharField(max_length=10,null=False,blank=False)
     description=models.CharField(max_length=1500)
     main_image=models.ImageField(null=False,blank=False,upload_to='service_img/')

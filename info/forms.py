@@ -35,6 +35,7 @@ class ServiceForm(ModelForm):
     def __init__(self,*args,**kwargs):
         super(ServiceForm,self).__init__(*args,**kwargs)
         self.fields['title'].widget.attrs.update({'class':'form-control'})
+        self.fields['url_title'].widget.attrs.update({'class':'form-control'})
         self.fields['description'].widget.attrs.update({'class':'form-control big-textarea'})
         self.fields['short_title'].widget.attrs.update({'class':'form-control'})
         self.fields['main_image'].widget.attrs.update({'class':'form-control'})

@@ -6,7 +6,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class Blog(models.Model):
-    title=models.CharField(max_length=200)
+    title=models.CharField(max_length=200,unique=True)
+    url_title=models.CharField(max_length=200,unique=True,null=True)
     author=models.ForeignKey(Profile,null=True,blank=False,on_delete=models.CASCADE)
     description=models.CharField(null=True,blank=True,max_length=300)
     cover_image=models.ImageField(null=False,blank=False,upload_to='blog_cover/')
