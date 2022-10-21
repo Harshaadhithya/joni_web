@@ -82,12 +82,16 @@ def view_blog(request,pk):
         tags=blog_obj.tags.all()
         related_blogs=[]
         for tag in tags:
-            related_blogs+=Blog.objects.distinct().filter(tags__name__icontains=tag.name)
+            print(blog_obj.id)
+            related_blogs+=Blog.objects.distinct().filter(tags__name__icontains=tag.name).exclude(id=blog_obj.id)
         related_blogs=list(set(related_blogs))
+        if len(related_blogs)<1:
+            related_blogs=Blog.objects.filter().exclude(id=blog_obj.id)[:10]
         services=Service.objects.all()
         context={'blog_obj':blog_obj,'related_blogs':related_blogs,'services':services}
         return render(request,'blog/view_blog.html',context)
-    except:
+    except Exception as e:
+        print(e)
         messages.error(request,"Page not found!")
         return redirect('home')
 
